@@ -31,31 +31,34 @@
 }
 // clamp for shorthand padding, 2 values
 @mixin cp2($topBottom, $topBottomMax, $leftRight, $leftRightMax){
-  padding: clamp(#{f.pxToRem($topBottom)}rem, #{f.preferred($topBottomMax)}vw, #{f.pxToRem($topBottomMax)}rem) clamp(#{f.pxtoRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxtoRem($leftRightMax)}rem);
+  padding: clamp(#{f.pxToRem($topBottom)}rem, #{f.preferred($topBottomMax)}vw, #{f.pxToRem($topBottomMax)}rem) clamp(#{f.pxToRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxToRem($leftRightMax)}rem);
 }
 // clamp for shorthand padding, 3 values
 @mixin cp3($top, $topMax, $leftRight, $leftRightMax, $bot, $botMax){
-  padding: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxtoRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxtoRem($leftRightMax)}rem) clamp(#{f.pxtoRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxtoRem($botMax)}rem);
+  padding: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxToRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxToRem($leftRightMax)}rem) clamp(#{f.pxToRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxToRem($botMax)}rem);
 }
 // clamp for shorthand padding, 4 values
 @mixin cp4($top, $topMax, $right, $rightMax, $bot, $botMax, $left, $leftMax){
-  padding: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxtoRem($right)}rem, #{f.preferred($rightMax)}vw, #{f.pxtoRem($rightMax)}rem) clamp(#{f.pxtoRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxtoRem($botMax)}rem) clamp(#{f.pxtoRem($left)}rem, #{f.preferred($leftMax)}vw, #{f.pxtoRem($leftMax)}rem);
+  padding: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxToRem($right)}rem, #{f.preferred($rightMax)}vw, #{f.pxToRem($rightMax)}rem) clamp(#{f.pxToRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxToRem($botMax)}rem) clamp(#{f.pxToRem($left)}rem, #{f.preferred($leftMax)}vw, #{f.pxToRem($leftMax)}rem);
 }
 
 // clamp for margin
 @mixin cm($side, $min, $max){
   margin-#{$side}: clamp(#{f.pxToRem($min)}rem, #{f.preferred($max)}vw, #{f.pxToRem($max)}rem);
 }
-
+// clamp for all sides with same value
+@mixin cma($min, $max){
+  padding: clamp(#{f.pxToRem($min)}rem, #{f.preferred($max)}vw, #{f.pxToRem($max)}rem);
+}
 // clamp for shorthand margin, 2 values
 @mixin cm2($topBottom, $topBottomMax, $leftRight, $leftRightMax){
-  margin: clamp(#{f.pxToRem($topBottom)}rem, #{f.preferred($topBottomMax)}vw, #{f.pxToRem($topBottomMax)}rem) clamp(#{f.pxtoRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxtoRem($leftRightMax)}rem);
+  margin: clamp(#{f.pxToRem($topBottom)}rem, #{f.preferred($topBottomMax)}vw, #{f.pxToRem($topBottomMax)}rem) clamp(#{f.pxToRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxToRem($leftRightMax)}rem);
 }
 // clamp for shorthand margin, 3 values
 @mixin cm3($top, $topMax, $leftRight, $leftRightMax, $bot, $botMax){
-  margin: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxtoRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxtoRem($leftRightMax)}rem) clamp(#{f.pxtoRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxtoRem($botMax)}rem);
+  margin: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxToRem($leftRight)}rem, #{f.preferred($leftRightMax)}vw, #{f.pxToRem($leftRightMax)}rem) clamp(#{f.pxToRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxToRem($botMax)}rem);
 }
 // clamp for shorthand margin, 4 values
 @mixin cm4($top, $topMax, $right, $rightMax, $bot, $botMax, $left, $leftMax){
-  margin: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxtoRem($right)}rem, #{f.preferred($rightMax)}vw, #{f.pxtoRem($rightMax)}rem) clamp(#{f.pxtoRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxtoRem($botMax)}rem) clamp(#{f.pxtoRem($left)}rem, #{f.preferred($leftMax)}vw, #{f.pxtoRem($leftMax)}rem);
+  margin: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxToRem($right)}rem, #{f.preferred($rightMax)}vw, #{f.pxToRem($rightMax)}rem) clamp(#{f.pxToRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxToRem($botMax)}rem) clamp(#{f.pxToRem($left)}rem, #{f.preferred($leftMax)}vw, #{f.pxToRem($leftMax)}rem);
 }

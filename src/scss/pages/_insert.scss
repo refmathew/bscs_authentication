@@ -1,0 +1,60 @@
+@use "variables/fonts";
+@use "variables/colors" as c;
+@use "variables/mixins" as m;
+@use "variables/functions";
+
+.main__page__insert-page{
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+
+        input[type="text"]{
+            margin-top: 0;
+        }
+
+        &__admin{
+            display: flex;
+            align-items: center;
+            margin-top: 1.6rem;
+
+            &__label{
+                margin-left: .5rem;
+                @include m.cf(16, 17);
+            }
+
+            input[type="checkbox"]{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                appearance: none;
+                @include m.cw(22, 26.4);
+                @include m.ch(22, 26.4);
+                background-color: #d5d5d5;
+                border-radius: .4rem;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #a5a5a5;
+                }
+
+                &:checked{
+                    background-color: c.$flushOrange;
+
+                    &::after{
+                        display: block;
+                    }
+                }
+
+                &::after{
+                    display: none;
+                    content: "\f00c";
+                    font-family: "Font Awesome 6 Free";
+                    font-size: 1.4rem;
+                    font-weight: 900;
+                    color: white;
+                }
+            }
+        }
+    }
+}

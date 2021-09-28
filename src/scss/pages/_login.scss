@@ -1,0 +1,75 @@
+@use "variables/fonts";
+@use "variables/colors" as c;
+@use "variables/mixins" as m;
+@use "variables/functions";
+
+.login-body{
+    width: 100%;
+    height: 64rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: c.$white;
+
+    @media only screen and (min-width: 768px){
+        height: 100vh;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__image{
+            @include m.cw(67, 134);
+            @include m.ch(110, 220);
+            @include m.cm(bottom, 23, 30);
+        }
+
+        &__definition{
+            @include m.cw(265, 470);
+            @include m.cf(20, 28);
+            font-family: "Varela Round", sans-serif;
+            color: c.$cinereous;
+            text-align: center;
+        }
+    }
+
+    .login-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            input{
+                @include m.cw(265, 470);
+                @include m.ch(43, 51);
+                margin-top: 1.2rem;
+                @include m.cp(left, 12, 24);
+                border: .2rem solid c.$platinum;
+                border-radius: .8rem;
+                @include m.cf(16, 17);
+                color: c.$xiketic;
+                
+                &::placeholder{
+                    color: c.$cinereous;
+                }
+            }
+
+            button{
+                margin-top: 1.2rem;
+            }
+        }
+
+        &__error{
+        }
+    }
+}
+

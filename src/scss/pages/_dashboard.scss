@@ -1,0 +1,198 @@
+@use "variables/fonts";
+@use "variables/colors" as c;
+@use "variables/mixins" as m;
+@use "variables/functions";
+
+.dashboard-body{
+    background-color: c.$white;
+    width: 100%;
+
+    .dashboard-wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 144rem;
+        height: 100vh;
+        margin: auto;
+
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: inherit;
+            @include m.cp3(32, 40, 32, 40, 0, 0);
+
+            &__logo{
+
+            }
+
+            &__avatar{
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            &__control-buttons{
+                display: none;
+
+                &__button{
+
+                    &__insert{
+
+                    }
+
+                    &__search{
+
+                    }
+
+                    &__view{
+
+                    }
+
+                    &__edit{
+
+                    }
+
+                    &__remove{
+
+                    }
+
+                    &__recover{
+
+                    }
+                }
+            }
+
+            &__logout{
+                display: none;
+
+                svg{
+
+                }
+            }
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+            margin-top: 4.5rem;
+
+            &__avatar{
+
+            }
+
+            &__page{
+
+                &__page{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &__header{
+                    width: 100%;
+                    @include m.cp(left, 32, 40);
+                    @include m.cf(24, 36);
+                    color: c.$jon;
+                    margin-bottom: 4.6rem;
+                }
+
+                &__form{
+                    display: flex;
+                    flex-direction: column;
+                    // align-items: center;
+                }
+            }
+        }
+
+        .control-menu{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            @include m.cp3(0, 0, 26, 32, 32, 40);
+
+            &__menu-button{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                @include m.cw(50, 60);
+                @include m.ch(50, 60);
+                @include m.cm(left, 8, 9.6);
+                background-color: c.$flushOrange;
+                border-radius: 50%;
+
+                &--active{
+                    box-shadow: inset 0 .4rem .4rem rgba(0, 0, 0, .25);
+                }
+
+                &__ellipsis{
+                    font-size: 2.2rem;
+                    line-height: 40%;
+                    color: c.$white;
+                }
+            }
+
+            &__control-buttons{
+                display: none;
+                flex-direction: row-reverse;
+
+                &--active{
+                    display: flex;
+                }
+
+                &__button{
+                    display: flex;
+                    @include m.cw(36, 43);
+                    @include m.ch(36, 43);
+                    background-color: c.$flushOrange;
+                    border-radius: 50%;
+                    box-shadow: 0 .4rem .4rem rgba(0, 0, 0, .25);
+                    color: c.$white;
+                    
+                    &:not(:last-child){
+                        @include m.cm(left, 6, 7.2);
+                    }
+
+                    .fa-solid{
+                        margin: auto;
+                        font-size: 1.5rem;
+                    }
+
+                    &__insert{
+
+                    }
+
+                    &__search{
+
+                    }
+
+                    &__view{
+
+                    }
+
+                    &__modify{
+
+                    }
+
+                    &__remove{
+
+                    }
+
+                    &__recover{
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// modifiers
+

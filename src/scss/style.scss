@@ -1,5 +1,11 @@
-@use "globals.scss";
-@use "variables/fonts";
-@use "variables/colors";
-@use "variables/mixins";
-@use "variables/functions";
+@use "globals";
+
+@use "pages/login";
+@use "pages/normal_user";
+@use "pages/dashboard";
+@use "pages/insert";
+@use "pages/search";
+@use "pages/view";
+@use "pages/modify";
+@use "pages/remove";
+@use "pages/recover";

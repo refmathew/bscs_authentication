@@ -1,6 +1,48 @@
+@use "variables/fonts";
+@use "variables/colors" as c;
+@use "variables/mixins" as m;
+@use "variables/functions";
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
+    font-family: "Varela Round", sans-serif;
+}
+
+button{
+    @include m.cw(265, 470);
+    @include m.ch(43, 51);
+    margin-top: 1.2rem;
+    background-color: c.$flushOrange;
+    border: none;
+    border-radius: .8rem;
+    @include m.cf(16, 20);
+    color: c.$white;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="password"], input[type="search"]{
+    @include m.cw(265, 470);
+    @include m.ch(43, 51);
+    margin-top: 1.2rem;
+    @include m.cp(left, 12, 24);
+    border: .2rem solid c.$platinum;
+    border-radius: .8rem;
+    @include m.cf(16, 17);
+    color: c.$xiketic;
+}
+
+.error-message{
+    margin-top: 1.2rem;
+    @include m.cf(16, 17);
+    color: c.$darkRed;
+}
+
+.success-message{
+    margin-top: 1.2rem;
+    @include m.cf(16, 17);
+    color: #0C7C59;
+    text-align: center;
 }

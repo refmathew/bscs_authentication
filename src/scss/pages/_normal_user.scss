@@ -1,0 +1,32 @@
+@use "variables/fonts";
+@use "variables/colors" as c;
+@use "variables/mixins" as m;
+@use "variables/functions";
+
+.normal_user-body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: c.$tequila;
+
+    .home{
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include m.cw(67, 134);
+        @include m.ch(110, 220);
+        @include m.cm(left, 32, 40);
+        margin-top: 3.2rem;
+        cursor: pointer;
+    }
+
+    .text{
+        @include m.cf(20, 28);
+        color: c.$jon;
+        text-align: center;
+    }
+}
+
