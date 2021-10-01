@@ -16,15 +16,28 @@
         height: 100vh;
         margin: auto;
 
+        @include m.for-size(tablet){
+            flex-direction: row;
+        }
+
         .nav{
+            position: sticky;
+            top: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: inherit;
-            @include m.cp3(32, 40, 32, 40, 0, 0);
+            @include m.cp3(32, 40, 32, 40, 32, 40);
+            background-color: c.$white;
+            
+            @include m.for-size(tablet){
+                flex-direction: column;
+                width: 16.7rem;
+                height: 100vh;
+            }
 
             &__logo{
-
+                cursor: pointer;
             }
 
             &__avatar{
@@ -32,12 +45,40 @@
                 height: 4rem;
                 border-radius: 50%;
                 overflow: hidden;
+
+                @include m.for-size(tablet){
+                    display: none;
+                }
             }
 
             &__control-buttons{
                 display: none;
 
+                @include m.for-size(tablet){
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 &__button{
+                    display: flex;
+                    @include m.cw(36, 43);
+                    @include m.ch(36, 43);
+                    background-color: c.$tequila;
+                    border-radius: 50%;
+                    color: c.$white;
+
+                    &--active{
+                        background-color: c.$flushOrange;
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .fa-solid{
+                        margin: auto;
+                        font-size: 1.5rem;
+                    }
 
                     &__insert{
 
@@ -67,6 +108,14 @@
 
             &__logout{
                 display: none;
+                transform: scaleX(-1);
+
+                @include m.for-size(tablet){
+                    display: inline-block;
+                    @include m.cw(36, 43);
+                    @include m.ch(36, 43);
+                    color: c.$tequila;
+                }
 
                 svg{
 
@@ -79,16 +128,94 @@
             flex-direction: column;
             margin-top: 4.5rem;
 
-            &__avatar{
+            @include m.for-size(tablet){
+                flex: 1;
+                width: 100%;
+                margin-top: 0;
+                @include m.cpa(32, 40);
+                background-color: c.$tequila;
+            }
 
+            &__nav{
+                cursor: pointer;
+
+                @include m.for-size(tablet){
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    @include m.cp(bottom, 32, 40);
+                    color: c.$jon;
+                }
+
+                &__header{
+                    display: none;
+
+                    @include m.for-size(tablet){
+                        display: inline-block;
+                        @include m.cf(32, 40);
+                    }
+                }
+
+                &__avatar{
+                    display: none;
+
+                    @include m.for-size(tablet){
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    &__name{
+                        display: none;
+
+                        @include m.for-size(tablet){
+                            display: inline-block;
+                            margin-right: 1rem;
+                            font-size: 1.7rem;
+
+                            i{
+                                font-size: 1.7rem;
+                                color: c.$cinereous;
+                            }
+                        }
+
+                    }
+                    
+                    img{
+                        display: none;
+
+                        @include m.for-size(tablet){
+                            display: inline-block;
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                    }
+                }
             }
 
             &__page{
 
-                &__page{
+                @include m.for-size(tablet){
                     display: flex;
+                    justify-content: center;
+                    height: 80vh;
+                }
+
+                &__page{
+                    display: none;
                     flex-direction: column;
                     align-items: center;
+
+                    @include m.for-size(tablet){
+                        width: 70vw;
+                    }
+
+
+                    &--active{
+                        display: flex;
+                    }
                 }
 
                 &__header{
@@ -97,6 +224,10 @@
                     @include m.cf(24, 36);
                     color: c.$jon;
                     margin-bottom: 4.6rem;
+
+                    @include m.for-size(tablet){
+                        display: none;
+                    }
                 }
 
                 &__form{
@@ -111,10 +242,19 @@
             position: absolute;
             bottom: 0;
             right: 0;
+            left: 0;
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
             @include m.cp3(0, 0, 26, 32, 32, 40);
+
+            @include m.for-size(tablet){
+                display: none;
+            }
+
+            &--sticky{
+                position: sticky;
+            }
 
             &__menu-button{
                 display: flex;
@@ -123,6 +263,7 @@
                 align-items: center;
                 @include m.cw(50, 60);
                 @include m.ch(50, 60);
+                margin-top: 0;
                 @include m.cm(left, 8, 9.6);
                 background-color: c.$flushOrange;
                 border-radius: 50%;
@@ -144,6 +285,7 @@
 
                 &--active{
                     display: flex;
+                    justify-content: center;
                 }
 
                 &__button{
@@ -187,6 +329,45 @@
                     &__recover{
 
                     }
+                }
+            }
+        }
+
+        .profile-menu{
+            display: none;
+            z-index: 100;
+            position: absolute;
+            width: 100%;
+            height: 100vh; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, .8);
+
+            &--active{
+                display: flex;
+            }
+
+            &__link{
+                color: c.$platinum;
+                cursor: pointer;
+                font-size: 2rem;
+
+                &:not(:last-child){
+                    margin-bottom: 2rem;
+                }
+
+                &:hover{
+                    color: c.$cinereous;
+                }
+            }
+
+            &__logout{
+                color: c.$flushOrange;
+                text-decoration: none;
+
+                &:hover{
+                    color: c.$darkRed;
                 }
             }
         }

@@ -4,18 +4,14 @@
 @mixin c($property, $min, $max){
   #{$property}: clamp(#{f.pxToRem($min)}rem, #{f.preferred($max)}vw, #{f.pxToRem($max)}rem);
 }
-
 // clamp for width
 @mixin cw($min, $max){
   width: clamp(#{f.pxToRem($min)}rem, #{f.preferred($max)}vw, #{f.pxToRem($max)}rem);
 }
-
-
 // clamp for height
 @mixin ch($min, $max){
   height: clamp(#{f.pxToRem($min)}rem, #{f.preferred($max)}vw, #{f.pxToRem($max)}rem);
 }
-
 // clamp for font-size
 @mixin cf($min, $max){
   font-size: clamp(#{f.pxToRem($min)}rem, #{f.preferred($max)}vw, #{f.pxToRem($max)}rem);
@@ -61,4 +57,20 @@
 // clamp for shorthand margin, 4 values
 @mixin cm4($top, $topMax, $right, $rightMax, $bot, $botMax, $left, $leftMax){
   margin: clamp(#{f.pxToRem($top)}rem, #{f.preferred($topMax)}vw, #{f.pxToRem($topMax)}rem) clamp(#{f.pxToRem($right)}rem, #{f.preferred($rightMax)}vw, #{f.pxToRem($rightMax)}rem) clamp(#{f.pxToRem($bot)}rem, #{f.preferred($botMax)}vw, #{f.pxToRem($botMax)}rem) clamp(#{f.pxToRem($left)}rem, #{f.preferred($leftMax)}vw, #{f.pxToRem($leftMax)}rem);
+}
+
+
+// Media queries
+@mixin for-size($size) { // sourced from https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 768px) { @content; } // original 600px
+  } @else if $size == tablet{
+    @media (min-width: 900px) { @content; }
+  } @else if $size == desktop-up {
+    @media (min-width: 1366px) { @content; } // original 1200px
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
 }

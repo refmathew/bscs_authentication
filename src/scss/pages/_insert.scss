@@ -3,7 +3,11 @@
 @use "variables/mixins" as m;
 @use "variables/functions";
 
-.main__page__insert-page{
+.dashboard-body .dashboard-wrapper .main__page__insert-page{
+
+    &--active{
+        display: flex;
+    }
 
     &__form{
         display: flex;
@@ -21,6 +25,10 @@
             &__label{
                 margin-left: .5rem;
                 @include m.cf(16, 17);
+
+                @include m.for-size(tablet){
+                    color: c.$jon;
+                }
             }
 
             input[type="checkbox"]{
@@ -34,8 +42,16 @@
                 border-radius: .4rem;
                 cursor: pointer;
 
+                @include m.for-size(tablet){
+                    background-color: c.$white;
+                }
+
                 &:hover{
                     background-color: #a5a5a5;
+
+                    @include m.for-size(tablet){
+                        background-color: c.$serenade;
+                    }
                 }
 
                 &:checked{

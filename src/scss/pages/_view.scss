@@ -1,0 +1,58 @@
+@use "variables/fonts";
+@use "variables/colors" as c;
+@use "variables/mixins" as m;
+@use "variables/functions";
+
+.dashboard-body .dashboard-wrapper .main__page__view-page{
+
+    &__header{
+
+    }
+
+    &__table-wrapper{
+        max-width: 80%;
+        @include m.cm(bottom, 32, 40);
+        border-radius: .8rem;
+        overflow-x: scroll;
+
+        @include m.for-size(tablet){
+            overflow-y: scroll;
+        }
+
+        &__table{
+            border-collapse: collapse;
+
+            td, th{
+                @include m.cpa(12, 26);
+                text-align: left;
+            }
+
+            td:not(:last-child), th:not(:last-child){
+                @include m.cp(right, 35, 42);
+            }
+            tr:nth-of-type(even){
+                background-color: c.$white;
+                color: c.$flushOrange;
+            }
+
+            tr:nth-of-type(odd){
+                background-color: c.$serenade;
+                color: c.$jon;
+            }
+
+            tr:first-child{
+                background-color: c.$flushOrange;
+                color: c.$white;
+            }
+
+            th{
+                @include m.cf(18, 21.6);
+            }
+
+            td{
+                @include m.cf(16, 19.2);
+            }
+        }
+    }
+
+}

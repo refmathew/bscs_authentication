@@ -3,7 +3,12 @@
 @use "variables/mixins" as m;
 @use "variables/functions";
 
-.main__page__search-page{
+.dashboard-body .dashboard-wrapper .main__page__search-page{
+    // display: none;
+
+    &--active{
+        display: flex;
+    }
 
     &__form{
 

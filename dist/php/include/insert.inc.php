@@ -9,8 +9,6 @@ if (isset($_POST["insert"])){
   $user_password = $_POST["user_password"];
   $user_isAdmin = $_POST["user_isAdmin"];
 
-  echo $user_registration_date;
-
   require_once "functions.inc.php";
   require_once "db.inc.php";
 
@@ -20,7 +18,7 @@ if (isset($_POST["insert"])){
   }
 
   if (usernameExists($conn, $user_name)){
-    header("location: ../dashboard.php?error=username_exists");
+    header("location: ../dashboard.php?error=username_already_exists");
     exit();
   } else{
     if ( insertRecord($conn, $user_name, $user_password, $user_isAdmin, $user_registration_date) !== false){

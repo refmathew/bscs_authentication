@@ -28,10 +28,21 @@ input[type="text"], input[type="password"], input[type="search"]{
     @include m.ch(43, 51);
     margin-top: 1.2rem;
     @include m.cp(left, 12, 24);
-    border: .2rem solid c.$platinum;
+    border: .2rem solid c.$tequila;
     border-radius: .8rem;
     @include m.cf(16, 17);
     color: c.$xiketic;
+
+    @include m.for-size(tablet){
+
+        &::placeholder{
+            color: c.$cinereous;
+        }
+    }
+}
+
+a{
+    cursor: pointer;
 }
 
 .error-message{
