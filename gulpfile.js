@@ -6,6 +6,7 @@ const cssnano = require('cssnano');
 const php = require('gulp-connect-php');
 const browserSync = require('browser-sync').create();
 
+
 // Transpile scss into css
 function scssTranspile() {
 	return src('./src/scss/style.scss', { sourcemaps: true })
